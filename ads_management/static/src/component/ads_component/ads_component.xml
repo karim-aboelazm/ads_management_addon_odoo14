@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ads_management.AdsComponentTemplate">
+        <div>
+            <h1 class="my-5" style="text-align:center">Ads Management Component</h1>
+            <div class="ads-container d-flex" t-attf-id="'ads-container-' + (widget.id || 'default-id')" data-model="sale.order"/>
+        </div>
+    </t>
+</templates>
+

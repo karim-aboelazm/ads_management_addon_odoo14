@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="ads_management.AdCardTemplate">
+        <div class="card bg-dark text-white mb-4 shadow-lg border-0 mx-1" style="min-width: 33%; max-width: 100%; width: auto; border-radius: 15px; position: relative;">
+            <img t-att-src="'data:image/png;base64,' + ad.image" class="card-img" t-att-alt="ad.name" style="height: 220px; object-fit: cover; border-radius: 15px;" />
+            <div class="card-img-overlay d-flex flex-column justify-content-start p-4">
+                <h5 class="card-title" style="font-size: 2.25rem; font-weight: 600;"><t t-esc="ad.name" /></h5>
+                <p class="card-text" style="font-size: 1.25rem; opacity: 0.8;"><t t-esc="ad.description or 'No description provided.'" /></p>
+                <button class="btn btn-info text-center" style="width:150px;height:60px;position: absolute; bottom: 20px; right: 20px;border-radius:20px;">
+                    <a t-att-href="ad.url or '#'" target="_blank" style="text-decoration:none; color: white;">Learn More</a>
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>

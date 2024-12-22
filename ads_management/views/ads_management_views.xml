@@ -1,0 +1,71 @@
+<odoo>
+    <record id="view_ads_management_form" model="ir.ui.view">
+        <field name="name">ads.management.form</field>
+        <field name="model">ads.management</field>
+        <field name="arch" type="xml">
+            <form string="Advertisement Management">
+                <header>
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar oe_right"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="reference" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="url"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="placement"/>
+                            <field name="target_model_id" options="{'no_create': True}"/>
+                            <label for="start_date" string="Period"/>
+                            <div class="o_row">
+                                <field name="start_date" widget="daterange" options="{'related_end_date': 'end_date'}"/>
+                                <span> to </span>
+                                <field name="end_date" widget="daterange" options="{'related_start_date': 'start_date'}"/>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_ads_management_tree" model="ir.ui.view">
+        <field name="name">ads.management.tree</field>
+        <field name="model">ads.management</field>
+        <field name="arch" type="xml">
+            <tree string="Advertisement Management">
+                <field name="reference"/>
+                <field name="name"/>
+                <field name="placement"/>
+                <field name="target_model_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_ads_management_action" model="ir.actions.act_window">
+        <field name="name">Ads Management</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ads.management</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_ads_management_action_client" model="ir.actions.client">
+        <field name="name">Ads Management</field>
+        <field name="tag">ads_management.adsManagementsClient</field>
+    </record>
+
+    <menuitem id="view_ads_management_root_menu" name="Ads Management" sequence="10"  web_icon="ads_management,static/description/icon.png">
+        <menuitem id="view_ads_management_sub_menu" name="Ads Management" action="view_ads_management_action" sequence="1"/>
+        <menuitem id="view_ads_management_sub_menu2" name="Ads Management Client" action="view_ads_management_action_client" sequence="2"/>
+    </menuitem>
+</odoo>

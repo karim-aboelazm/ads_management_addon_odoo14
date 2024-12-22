@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit the assets_backend template -->
+        <template id="assets_backend" name="ads_management_script" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/ads_management/static/src/component/ads_component/ads_component.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>
