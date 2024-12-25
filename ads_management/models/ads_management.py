@@ -47,12 +47,12 @@ class AdsManagement(models.Model):
         ads = self.search([('target_model_id.model', '=', model_name)])  # Ensure this is correct
         return [{
             'name': ad.name,
-            'image': ad.image,
-            'url': ad.url,
-            'description': ad.description,
-            'placement': ad.placement,
-            'start_date': fields.Date.to_string(ad.start_date),
-            'end_date': fields.Date.to_string(ad.end_date),
+            'image': ad.image.decode('utf-8') if ad.image else '',
+            'url': ad.url or '#',
+            'description': ad.description or 'No description available.',
+            'placement': ad.placement or 'unspecified',
+            'start_date': fields.Date.to_string(ad.start_date) if ad.start_date else None,
+            'end_date': fields.Date.to_string(ad.end_date) if ad.end_date else None,
             'status': ad.status,
         } for ad in ads]
 

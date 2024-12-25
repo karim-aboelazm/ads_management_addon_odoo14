@@ -11,6 +11,7 @@
         'data/ads_management_sequence.xml',
         'views/ads_management_views.xml',
         'views/templates.xml',
+        'views/ads_banner_view.xml',
         'views/view.xml',
     ],
     'qweb': [

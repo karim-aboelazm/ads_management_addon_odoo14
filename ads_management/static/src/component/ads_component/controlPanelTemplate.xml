@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-inherit="web.ControlPanel" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@class='o_cp_bottom']" position="after">
+             <div class="ads-container" t-att-data-model="props.action.res_model"/>
+        </xpath>
+    </t>
+</templates>

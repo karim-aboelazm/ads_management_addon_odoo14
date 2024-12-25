@@ -20,7 +20,8 @@ odoo.define('ads_management.AdsComponent', function (require) {
         start: function () {
             this._super.apply(this, arguments);
 
-                const modelName = this.state.model_name || this.$('.ads-container').data('model');
+            const modelName = this.state.model_name || this.$('.ads-container').data('model');
+            console.log(modelName);
             console.error("Model is : " + modelName);
             if (!modelName) {
                 console.error("Model name is undefined!");

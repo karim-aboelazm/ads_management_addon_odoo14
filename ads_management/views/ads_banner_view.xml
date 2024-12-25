@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="ads_banner_template_view" name="Ads Banner View">
+        <div class="row">
+            <t t-if="values['ads']">
+                <t t-foreach="values['ads']" t-as="ad">
+                    <div class="col-md-4 card bg-dark text-white shadow-lg border-0 mx-1"
+                         style="border-radius: 15px; position: relative;max-height:100px;">
+                        <img t-att-src="'data:image/png;base64,' + (ad.get('image') or '')"
+                             class="card-img"
+                             t-att-alt="ad.get('name', 'No Name')"
+                             style="height: 100%; object-fit: cover; border-radius: 15px;" />
+<!--                        <div class="card-img-overlay d-flex flex-column justify-content-start p-4">-->
+<!--                            <h5 class="card-title" style="font-size: 2.25rem; font-weight: 600;">-->
+<!--                                <t t-esc="ad.get('name', 'No Name')" />-->
+<!--                            </h5>-->
+<!--                            <p class="card-text" style="font-size: 1.25rem; opacity: 0.8;">-->
+<!--                                <t t-esc="ad.get('description', 'No description available.')" />-->
+<!--                            </p>-->
+<!--                            <a t-att-href="ad.get('url', '#')" target="_blank"-->
+<!--                               class="btn btn-info text-center"-->
+<!--                               style="width:150px;height:60px;position: absolute; bottom: 20px; right: 20px; border-radius:20px; text-decoration:none; color: white;">-->
+<!--                                Learn More-->
+<!--                            </a>-->
+<!--                        </div>-->
+                    </div>
+                </t>
+            </t>
+            <t t-else="">
+                <div class="alert alert-info text-center" style="margin: auto;">
+                    No ads available for this model.
+                </div>
+            </t>
+        </div>
+    </template>
+</odoo>

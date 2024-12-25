@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-<!--    &lt;!&ndash; Inherit Form View to Modify it &ndash;&gt;-->
-<!--    <record id="sales_order_ads_view" model="ir.ui.view">-->
-<!--        <field name="name">sales_order_ads_view_tree</field>-->
-<!--        <field name="model">sale.order</field>-->
-<!--        <field name="inherit_id" ref="sale.view_order_form"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <xpath expr="//header" position="before">-->
-<!--                <t t-call="ads_management.AdsComponentTemplate" t-att-model="sale.order"/>-->
-<!--            </xpath>-->
-<!--        </field>-->
-<!--    </record>-->
+    <!-- Inherit Form View to Modify it -->
+    <record id="sales_order_ads_view" model="ir.ui.view">
+        <field name="name">sales_order_ads_view_tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="banner_route">
+                    /ads/sale.order
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="sales_order_ads_tree_view" model="ir.ui.view">
+        <field name="name">sales_order_ads_view_tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="banner_route">
+                    /ads/sale.order
+                </attribute>
+            </xpath>
+        </field>
+    </record>
 </odoo>
